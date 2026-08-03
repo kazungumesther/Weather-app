@@ -1,26 +1,119 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #87CEEB, #4A90E2);
+  color: rgb(166, 212, 232);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.weather-card {
+  width: 430px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  color: rgb(133, 188, 212);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #85a3e5;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.search-box button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.weather-info {
+  margin-top: 20px;
+  line-height: 2;
+  font-size: 18px;
+}
+
+.error {
+  color: yellow;
+  margin-top: 15px;
+}
+
+
+.weather-card {
+  width: 430px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9); /* More solid white */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #333;
+}
+
+.weather-card h1 {
+  color: #2563eb;
+}
+
+.weather-card h2 {
+  color: #1d4ed8;
+}
+
+.weather-card p {
+  color: #444;
+}
+
+.search-box input {
+  background: white;
+  color: #333;
+  border: 2px solid #93c5fd;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.search-box button {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.search-box button:hover {
+  background: #1d4ed8;
 }
