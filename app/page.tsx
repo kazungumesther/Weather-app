@@ -9,7 +9,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API_KEY = "59aca4bd9469e18af61a108b04d98370";
+  const API_KEY = process.env.WEATHER_API_KEY;
+
 
   const getWeather = async () => {
     if (!city) return;
@@ -91,6 +92,7 @@ export default function Home() {
             <p> Condition: {weather.weather[0].main}</p>
 
             <p> Humidity: {weather.main.humidity}%</p>
+
             <p> Wind Speed: {weather.wind.speed} m/s</p>
 
             <p>Visibility: {weather.visibility / 1000} km</p>
