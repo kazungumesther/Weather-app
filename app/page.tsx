@@ -39,17 +39,17 @@ export default function Home() {
   const weatherEmoji = (condition: string) => {
     switch (condition) {
       case "Clear":
-        return "☀️";
+        return "";
       case "Clouds":
-        return "☁️";
+        return "";
       case "Rain":
-        return "🌧";
+        return "";
       case "Thunderstorm":
-        return "⛈";
+        return "";
       case "Snow":
-        return "❄️";
+        return "";
       default:
-        return "🌤";
+        return "";
     }
   };
 
@@ -57,7 +57,7 @@ export default function Home() {
     <main className="container">
       <div className="weather-card">
 
-        <h1>⛅  Weather App</h1>
+        <h1>  Weather App</h1>
 
         <p>{new Date().toDateString()}</p>
 
@@ -84,17 +84,16 @@ export default function Home() {
               {weatherEmoji(weather.weather[0].main)} {weather.name}
             </h2>
 
-            <p>🌡️ Temperature: {weather.main.temp}°C</p>
+            <p> Temperature: {weather.main.temp}°C</p>
 
-            <p>🥵 Feels Like: {weather.main.feels_like}°C</p>
+            <p> Feels Like: {weather.main.feels_like}°C</p>
 
-            <p>☁️ Condition: {weather.weather[0].main}</p>
+            <p> Condition: {weather.weather[0].main}</p>
 
-            <p>💧 Humidity: {weather.main.humidity}%</p>
+            <p> Humidity: {weather.main.humidity}%</p>
+            <p> Wind Speed: {weather.wind.speed} m/s</p>
 
-            <p>💨 Wind Speed: {weather.wind.speed} m/s</p>
-
-            <p>👁 Visibility: {weather.visibility / 1000} km</p>
+            <p>Visibility: {weather.visibility / 1000} km</p>
           </div>
         )}
       </div>
