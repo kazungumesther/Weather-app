@@ -9,7 +9,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
- const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+
 
 
 
